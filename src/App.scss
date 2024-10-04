@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$primary: black;
+$primary: slategray;
 $secondary: white;
 $accent: darkorange;
 
@@ -9,140 +9,63 @@ $theme-colors: (
   "primary": $primary,
   "danger": $secondary,
   "warning": $accent,
-  --bs-modal-color: black
+  --bs-modal-color: slategray
 );
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
-html *{ 
+html, body {
+  height: 100%; /* Ensure the root elements fill the viewport */
+  margin: 0; /* Remove default margins */
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
   background-color: black;
-  color: $secondary; 
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid ivory;
+  padding: 16px 0;
+}
+
+.header-text{
+  color: rebeccapurple;
+  font-size: 30px;
+  // font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+.header-subtext{
+  color: ivory;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+main {
+  padding: 16px 0;
+  background-color: ivory;
+  flex-grow: 1;
+  // border: 2px solid ivory;
+  overflow-y: auto; /* Makes the main scrollable if content exceeds height */
+}
+
+footer {
+  color: ivory;
+  background-color: black;
+  border-top: 2px solid ivory;
+  padding: 16px 0;
 }
 
 h1{
-  font-weight: 800;
-}
-
-h3{
-  font-weight: 100;
-}
-
-.pretty-lines {
-  position: absolute;
-  height: 100vh;
-  width: 50vw;
-  left: -50vw;
-  top: -50vh;
-  border-right: 2px solid red;
-  background-color:  red;
-  -moz-transform: skew(60deg);
-  -webkit-transform: skew(60deg);
-  transform: skew(60deg);
-}
-
-table td {
-  padding: 3px
-}
-
-.entry-form {
   font-size: 24px;
-}
-
-#guess_input_container {
-  border: 0;
-  display: table;
-  width: 100%;
-  min-height: 48px;
-  overflow-wrap: break-word;
-}
-
-#guess_input{
-  height: 100%;
-  width: 100%;
-  padding: 10px;
-  margin-right: 10px;
-  text-align: left;
-  vertical-align: center;
-  color: white;
-  border: 1px dashed grey;
-  border-radius: 5px;
-  font-size: 36px;
-  font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-}
-
-#guess_input:focus{
-  border: 1px solid $secondary;
-}
-
-#guess_submit_container{
-  bottom: 0;
-  min-width: 400px;
-  left: calc(50vw - 200px);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  border: 2px solid $secondary;
-  border-bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-button {
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-color: $accent;
-}
-
-input[type=submit]{
-  @extend button;
-  font-size: 24px;
-}
-
-input[type=button]{
-  @extend button;
-  font-size: 16px;
-}
-
-.guess-table {
-  width: 100%;
-  font-size: 24px;
-  font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-}
-
-.guess-row {
-  width: 100%;
-  border-bottom: 2px dotted white;
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.guess-row td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  white-space: wrap;
-}
-
-.guess-row td:nth-child(1) {
-  width: 90%;
-  text-align: left;
-}
-
-.guess-row td:nth-child(2) {
-  text-align: right;
-}
-
-.guessed-word-display {
-  padding: 1px 5px 1px 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 5px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
 }

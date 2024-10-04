@@ -1,7 +1,7 @@
 import React from "react";
-import { evaluatePhrase } from "../API";
 import { Guess } from "../types";
 import { cleanString, getResultColor } from "../utils";
+import { evaluatePhrase } from "../description/API";
 
 interface EntryFormProps {
   guesses: Guess[];

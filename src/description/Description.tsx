@@ -1,13 +1,13 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
+import React from 'react';
 import { Col, Container, Row, Spinner } from 'reactstrap';
 import { EntryForm } from '../components/EntryForm';
-import { Guess } from '../types';
-import { evaluatePhrase, getRandomWord, getWordData } from '../API';
-import { cleanString } from '../utils';
 import { GuessTable } from '../components/GuessTable';
 import { WordDisplay } from '../components/WordDisplay';
+import { Guess } from '../types';
+import { cleanString } from '../utils';
+import './App.scss';
+import { evaluatePhrase, getRandomWord, getWordData } from './API';
 
 interface Props {
 
